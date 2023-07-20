@@ -1,7 +1,7 @@
 const { nanoid } = require('nanoid');
 
 class NotesService {
-    construnctor() {
+    constructor() {
         this._notes = [];
     }
 
@@ -14,9 +14,11 @@ class NotesService {
             title, tags, body, id, createdAt, updatedAt,
         };
 
+
         this._notes.push(newNote);
 
         const isSuccess = this._notes.filter((note) => note.id === id).length > 0;
+
         if (!isSuccess) {
             throw new Error('Catatan gagal ditambahkan');
         }
@@ -35,7 +37,8 @@ class NotesService {
         }
         return note;
     }
-    editNoteByID(id, { title, body, tags }) {
+
+    editNoteById(id, { title, body, tags }) {
         const index = this._notes.findIndex((note) => note.id === id);
         if (index === -1) {
             throw new Error('Gagal memperbarui catatan. Id tidak ditemukan');
@@ -51,6 +54,7 @@ class NotesService {
             updatedAt,
         };
     }
+
     deleteNoteById(id) {
         const index = this._notes.findIndex((note) => note.id === id);
         if (index === -1) {
