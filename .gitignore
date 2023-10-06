@@ -35,3 +35,6 @@ coverage/
 .vscode/
 *.swp
 *.swo
+
+notes-api-web-server.pem
+.prod.env
