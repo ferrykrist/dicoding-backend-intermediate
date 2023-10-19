@@ -38,3 +38,4 @@ coverage/
 
 notes-api-web-server.pem
 .prod.env
+src/api/uploads/file
